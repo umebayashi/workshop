@@ -1,0 +1,58 @@
+﻿@model MVCScheduler.Web.Areas.Scheduler.Models.ResourceReserveViewModel
+
+@{
+    ViewBag.Title = "Details.Mobile";
+}
+
+<h2>Details.Mobile</h2>
+
+<fieldset>
+    <legend>ResourceReserveViewModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ResourceName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ResourceName)
+    </div>
+
+	<div class="display-label">
+		@Html.DisplayNameFor(model => model.StartDate)
+	</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StartDate)
+    </div>
+
+	<div class="display-label">
+		@Html.DisplayNameFor(model => model.EndDate)
+	</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EndDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ReserveUserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReserveUserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Memo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Memo)
+    </div>
+</fieldset>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

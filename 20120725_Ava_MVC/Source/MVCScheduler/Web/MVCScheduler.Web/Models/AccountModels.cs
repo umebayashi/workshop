@@ -63,4 +63,25 @@ namespace MVCScheduler.Web.Models
 		[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
 		public string ConfirmPassword { get; set; }
 	}
+
+	public class LoginResult
+	{
+		public bool Success { get; set; }
+
+		public string Message { get; set; }
+	}
+
+	public class RegisterResult
+	{
+		public bool Success { get; set; }
+
+		public string Message { get; set; }
+	}
+
+	public class ChangePasswordResult
+	{
+		public bool Success { get; set; }
+
+		public string Message { get; set; }
+	}
 }

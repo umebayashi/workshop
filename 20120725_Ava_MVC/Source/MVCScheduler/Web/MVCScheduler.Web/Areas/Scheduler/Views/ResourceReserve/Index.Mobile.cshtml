@@ -1,0 +1,30 @@
+﻿@model MVCScheduler.Web.Areas.Scheduler.Models.ResourceReserveListViewModel
+
+@{
+    ViewBag.Title = "リソース予約";
+}
+
+@section Scripts
+{
+	<script type="text/javascript" src="~/Areas/Scheduler/Scripts/ResourceReserve/Index.js"></script>
+}
+
+<div class="editor-label">
+	@Html.LabelFor(model => model.SearchResourceTypeID)
+</div>
+<div class="editor-field">
+	@Html.DropDownListFor(model => model.SearchResourceTypeID, Model.ResourceTypesAsListItem())
+</div>
+
+<div class="editor-label">
+	@Html.LabelFor(model => model.SearchResourceID)
+</div>
+<div class="editor-field">
+	@Html.DropDownListFor(model => model.SearchResourceID, Model.ResourcesAsListItem())
+</div>
+
+@Html.ActionLink("検索", "Search", new { resourceID = Model.SearchResourceID })
+
+<div id="SearchResultSection">
+</div>
+

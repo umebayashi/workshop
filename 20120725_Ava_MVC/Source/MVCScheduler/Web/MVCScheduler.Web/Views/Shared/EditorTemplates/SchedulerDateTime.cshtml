@@ -1,0 +1,9 @@
+﻿@model MVCScheduler.Web.Models.SchedulerDateTime
+@using MVCScheduler.Web.Helpers
+
+<table>
+	<tr>
+		<td>@Html.TextBoxFor(model => model.Date, new { @class = "datepicker" })</td>
+		<td>@Html.DropDownListFor(model => model.Time, @DateTimeEditorHelper.GetTimeOfDays())</td>
+	</tr>
+</table>

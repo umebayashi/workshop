@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using MVCScheduler.Web.Models;
+using MVCScheduler.Web.WorkerServices;
 
 namespace MVCScheduler.Web.Controllers
 {
@@ -12,6 +13,7 @@ namespace MVCScheduler.Web.Controllers
 	[Authorize]
 	public class AccountController : Controller
 	{
+		private AccountWorkerService WorkerService = new AccountWorkerService();
 
 		//
 		// GET: /Account/Login
@@ -32,7 +34,9 @@ namespace MVCScheduler.Web.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				if (Membership.ValidateUser(model.UserName, model.Password))
+				//if (Membership.ValidateUser(model.UserName, model.Password))
+				var loginResult = this.WorkerService.ValidateUser(model);
+				if (loginResult.Success)
 				{
 					FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
 					if (Url.IsLocalUrl(returnUrl))
@@ -83,17 +87,27 @@ namespace MVCScheduler.Web.Controllers
 			if (ModelState.IsValid)
 			{
 				// Attempt to register the user
-				MembershipCreateStatus createStatus;
-				Membership.CreateUser(model.UserName, model.Password, model.Email, passwordQuestion: null, passwordAnswer: null, isApproved: true, providerUserKey: null, status: out createStatus);
+				//MembershipCreateStatus createStatus;
+				//Membership.CreateUser(model.UserName, model.Password, model.Email, passwordQuestion: null, passwordAnswer: null, isApproved: true, providerUserKey: null, status: out createStatus);
 
-				if (createStatus == MembershipCreateStatus.Success)
+				//if (createStatus == MembershipCreateStatus.Success)
+				//{
+				//	FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
+				//	return RedirectToAction("Index", "Home");
+				//}
+				//else
+				//{
+				//	ModelState.AddModelError("", ErrorCodeToString(createStatus));
+				//}
+				var registerResult = this.WorkerService.RegisterUser(model);
+				if (registerResult.Success)
 				{
 					FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
 					return RedirectToAction("Index", "Home");
 				}
 				else
 				{
-					ModelState.AddModelError("", ErrorCodeToString(createStatus));
+					ModelState.AddModelError("", registerResult.Message);
 				}
 			}
 

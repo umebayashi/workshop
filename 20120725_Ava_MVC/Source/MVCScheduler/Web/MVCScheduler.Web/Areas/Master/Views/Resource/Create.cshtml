@@ -1,0 +1,47 @@
+﻿@model MVCScheduler.Web.Areas.Master.Models.ResourceViewModel
+
+@{
+	Html.EnableClientValidation();
+}
+
+<h2>リソースマスタ - 新規追加</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>M_AppUser</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Code)
+            @Html.ValidationMessageFor(model => model.Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+		<div class="editorlabel">
+			@Html.LabelFor(model => model.ResourceTypeID)
+		</div>
+		<div class="editor-field">
+			@Html.DropDownListFor(model => model.ResourceTypeID, Model.ResourceTypesAsListItem())
+			@Html.ValidationMessageFor(model => model.ResourceTypeID)
+		</div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

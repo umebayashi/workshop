@@ -1,0 +1,26 @@
+﻿@model MVCScheduler.Web.Areas.Master.Models.ResourceTypeListViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>リソースタイプマスタ - 一覧</h2>
+
+<table class="data-grid">
+	<tr class="table-header">
+		<th></th>
+		<th>コード</th>
+		<th>名前</th>
+	</tr>
+	@foreach (var item in Model.Items)
+	{
+	<tr>
+		<td>@Html.ActionLink("編集", "Edit", new { id = item.ID })</td>
+		<td>@item.Code</td>
+		<td>@item.Name</td>
+	</tr>
+	}
+	<tr class="table-footer">
+		<td colspan="3">@Html.ActionLink("新規追加", "Create")</td>
+	</tr>
+</table>

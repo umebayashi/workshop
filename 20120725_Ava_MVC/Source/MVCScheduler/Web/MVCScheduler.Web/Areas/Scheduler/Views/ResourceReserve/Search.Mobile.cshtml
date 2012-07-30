@@ -1,0 +1,7 @@
+﻿@model MVCScheduler.Web.Areas.Scheduler.Models.ResourceReserveListViewModel
+
+<ul data-role="listview">
+	@foreach (var item in Model.Items) {
+		<li>@Html.ActionLink(item.Name, "Details", new { id = item.ID })</li>
+	}
+</ul>

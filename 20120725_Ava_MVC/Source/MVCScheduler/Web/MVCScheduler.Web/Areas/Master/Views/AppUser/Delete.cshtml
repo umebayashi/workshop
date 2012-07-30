@@ -1,0 +1,47 @@
+﻿@model MVCScheduler.Web.Areas.Master.Models.AppUserViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>ユーザマスタ - 削除</h2>
+
+<h3>削除しますか?</h3>
+@using (Html.BeginForm()) {
+    <fieldset>
+        <legend>AppUserViewModel</legend>
+
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.Timestamp)
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Code)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Code)
+            @Html.HiddenFor(model => model.Code)
+        </div>
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Name)
+            @Html.HiddenFor(model => model.Name)
+        </div>
+
+	    <div class="display-label">
+		    @Html.DisplayNameFor(model => model.SystemUserID)
+	    </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.SystemUserID)
+            @Html.HiddenFor(model => model.SystemUserID)
+        </div>
+    </fieldset>
+
+
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

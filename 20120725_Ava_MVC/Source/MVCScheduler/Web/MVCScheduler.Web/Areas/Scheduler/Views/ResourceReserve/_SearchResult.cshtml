@@ -1,0 +1,35 @@
+﻿@model MVCScheduler.Web.Areas.Scheduler.Models.ResourceReserveListViewModel
+
+
+<table id="tblResourceReserves" class="data-grid" style="table-layout: fixed;">
+	<thead id="tblResourceResevesH">
+		<tr class="table-header">
+			<th style="width: 80px;"></th>
+			<th style="width: 100px;">名前</th>
+			<th style="width: 150px;">予約開始日</th>
+			<th style="width: 150px;">予約終了日</th>
+			<th style="width: 100px;">予約ユーザ</th>
+			<th style="width: 200px;">メモ</th>
+		</tr>
+	</thead>
+	<tbody id="tblResourceReservesB">
+		@foreach (var item in Model.Items) {
+			<tr>
+				<td style="width: 80px;">
+					@Html.ActionLink("編集", "Edit", new { resourceReserveID = item.ID })／
+					@Html.ActionLink("削除", "Delete", new { resourceReserveID = item.ID })
+				</td>
+				<td style="width: 100px;">@item.Name</td>
+				<td style="width: 150px;">@item.StartDate.Value.ToString("yyyy/MM/dd HH:mm")</td>
+				<td style="width: 150px;">@item.EndDate.Value.ToString("yyyy/MM/dd HH:mm")</td>
+				<td style="width: 100px;">@item.ReserveUserName</td>
+				<td style="width: 200px;">@item.Memo</td>
+			</tr>
+		}
+	</tbody>
+	<tfoot id="tblResourceReservesF">
+		<tr class="table-footer">
+			<td colspan="6">@Html.ActionLink("新規登録", "Create", new { resourceID = Model.SearchResourceID })</td>
+		</tr>
+	</tfoot>
+</table>

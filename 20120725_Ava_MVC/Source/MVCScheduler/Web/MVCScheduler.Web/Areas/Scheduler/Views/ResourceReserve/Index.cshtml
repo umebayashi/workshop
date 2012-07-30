@@ -1,0 +1,40 @@
+﻿@model MVCScheduler.Web.Areas.Scheduler.Models.ResourceReserveListViewModel
+
+
+@{
+	Html.EnableClientValidation();
+	Html.EnableUnobtrusiveJavaScript();
+}
+
+<h2>リソースの予約</h2>
+
+@using (Ajax.BeginForm("Search", new { name = "SearchForm" }, new AjaxOptions { UpdateTargetId = "SearchResultSection", HttpMethod = "Post" }))
+{
+	<div class="editor-label">
+		@Html.LabelFor(model => model.SearchResourceTypeID)
+	</div>
+	<div class="editor-field">
+		@Html.DropDownListFor(model => model.SearchResourceTypeID, Model.ResourceTypesAsListItem())
+	</div>
+
+	<div class="editor-label">
+		@Html.LabelFor(model => model.SearchResourceID)
+	</div>
+	<div class="editor-field">
+		@Html.DropDownListFor(model => model.SearchResourceID, Model.ResourcesAsListItem())
+	</div>
+
+	<br />
+	<input type="submit" value="検索" />
+}
+
+<div id="SearchResultSection">
+</div>
+
+<div id="EditSection">
+</div>
+
+@section Scripts
+{
+	<script type="text/javascript" src="@Url.Content("~/Areas/Scheduler/Scripts/ResourceReserve/Index.js")"></script>
+}

@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Index.Mobile";
+}
+
+<div data-role="content">
+	<ul data-role="listview" data-inset="true">
+		<li>@Html.ActionLink("ログイン", "Login", "Account", new { area = "" })</li>
+		<li>@Html.ActionLink("リソースの予約", "Index", "ResourceReserve", new { area = "Scheduler" }, null)</li>
+		<li>@Html.ActionLink("予定の登録", "Index", "Schedule", new { area = "Scheduler" }, null)</li>
+		<li>@Html.ActionLink("会議の登録", "Index", "Meeting", new { area = "Scheduler" }, null)</li>
+	</ul>
+</div>

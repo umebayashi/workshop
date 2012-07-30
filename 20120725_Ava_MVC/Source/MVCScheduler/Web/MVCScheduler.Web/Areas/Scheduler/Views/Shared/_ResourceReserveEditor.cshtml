@@ -1,0 +1,28 @@
+﻿@model MVCScheduler.Web.Areas.Scheduler.Models.ResourceReserveEditViewModel
+
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.ID)
+    @Html.HiddenFor(model => Model.ResourceID)
+
+    <table>
+        <tr>
+            <td>@Html.LabelFor(model => model.Name)</td>
+            <td>@Html.TextBoxFor(model => model.Name)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.StartDate)</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.EndDate)</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.Memo)</td>
+            <td>@Html.TextAreaFor(model => model.Memo)</td>
+        </tr>
+    </table>
+}
