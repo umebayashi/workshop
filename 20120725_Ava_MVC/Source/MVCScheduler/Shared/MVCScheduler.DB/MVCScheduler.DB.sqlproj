@@ -14,13 +14,15 @@
     </RootPath>
     <RootNamespace>MVCScheduler.DB</RootNamespace>
     <AssemblyName>MVCScheduler.DB</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <ModelCollation>1041,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetLanguage>CS</TargetLanguage>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SqlServerVerification>False</SqlServerVerification>
+    <DefaultCollation>Japanese_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -52,5 +54,21 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\M_Resource.sql" />
+    <Build Include="dbo\Tables\M_ResourceType.sql" />
+    <Build Include="dbo\Tables\T_Meeting.sql" />
+    <Build Include="dbo\Tables\T_MeetingInvitation.sql" />
+    <Build Include="dbo\Tables\T_ResourceReserve.sql" />
+    <Build Include="dbo\Tables\T_UserSchedule.sql" />
+    <Build Include="dbo\Tables\M_SystemUser.sql" />
+    <Build Include="dbo\Tables\M_AppUser.sql" />
+    <Build Include="Security\IIS APPPOOL_DefaultAppPool.sql" />
+    <Build Include="Security\IIS APPPOOL_DefaultAppPool_1.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
   </ItemGroup>
 </Project>
