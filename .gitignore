@@ -5,6 +5,7 @@ obj
 *.log
 *.dll
 *.exe
+*.pdb
 *.mdf
 *.ldf
 /Umebayashi.Math/*.suo
