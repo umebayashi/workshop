@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{0A615CF1-C864-47FE-AE22-373814DC3647}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{AC543DD0-DFED-412E-9C8C-5C41CE4FA2F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCScheduler.Core", "Shared\MVCScheduler.Core\MVCScheduler.Core.csproj", "{BE39DE6A-B04B-4DCD-B22E-760DB380593D}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MVCScheduler.DB", "Shared\MVCScheduler.DB\MVCScheduler.DB.sqlproj", "{8827EC79-09B4-4569-9254-AF2A6AF1EAD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCScheduler.Repository.Sql", "Shared\MVCScheduler.Repository.Sql\MVCScheduler.Repository.Sql.csproj", "{EC3FD4B5-7B80-48C4-95A0-801CADFE5941}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCScheduler.Web", "Web\MVCScheduler.Web\MVCScheduler.Web.csproj", "{4E616F77-D8F6-448E-90EA-09085D3EADB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCScheduler.Web.Tests", "Web\MVCScheduler.Web.Tests\MVCScheduler.Web.Tests.csproj", "{A47B5020-3D96-4D8E-A570-E24A6D887BC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E616F77-D8F6-448E-90EA-09085D3EADB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E616F77-D8F6-448E-90EA-09085D3EADB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E616F77-D8F6-448E-90EA-09085D3EADB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E616F77-D8F6-448E-90EA-09085D3EADB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8827EC79-09B4-4569-9254-AF2A6AF1EAD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8827EC79-09B4-4569-9254-AF2A6AF1EAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8827EC79-09B4-4569-9254-AF2A6AF1EAD7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8827EC79-09B4-4569-9254-AF2A6AF1EAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8827EC79-09B4-4569-9254-AF2A6AF1EAD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8827EC79-09B4-4569-9254-AF2A6AF1EAD7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A47B5020-3D96-4D8E-A570-E24A6D887BC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A47B5020-3D96-4D8E-A570-E24A6D887BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A47B5020-3D96-4D8E-A570-E24A6D887BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A47B5020-3D96-4D8E-A570-E24A6D887BC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE39DE6A-B04B-4DCD-B22E-760DB380593D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE39DE6A-B04B-4DCD-B22E-760DB380593D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE39DE6A-B04B-4DCD-B22E-760DB380593D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE39DE6A-B04B-4DCD-B22E-760DB380593D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC3FD4B5-7B80-48C4-95A0-801CADFE5941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC3FD4B5-7B80-48C4-95A0-801CADFE5941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC3FD4B5-7B80-48C4-95A0-801CADFE5941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC3FD4B5-7B80-48C4-95A0-801CADFE5941}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4E616F77-D8F6-448E-90EA-09085D3EADB2} = {AC543DD0-DFED-412E-9C8C-5C41CE4FA2F3}
+		{8827EC79-09B4-4569-9254-AF2A6AF1EAD7} = {0A615CF1-C864-47FE-AE22-373814DC3647}
+		{A47B5020-3D96-4D8E-A570-E24A6D887BC0} = {AC543DD0-DFED-412E-9C8C-5C41CE4FA2F3}
+		{BE39DE6A-B04B-4DCD-B22E-760DB380593D} = {0A615CF1-C864-47FE-AE22-373814DC3647}
+		{EC3FD4B5-7B80-48C4-95A0-801CADFE5941} = {0A615CF1-C864-47FE-AE22-373814DC3647}
+	EndGlobalSection
+EndGlobal
