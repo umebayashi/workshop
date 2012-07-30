@@ -3,4 +3,8 @@ obj
 *.user
 *.suo
 *.log
+*.dll
+*.exe
+*.mdf
+*.ldf
 /Umebayashi.Math/*.suo
