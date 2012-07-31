@@ -292,6 +292,8 @@
     <Content Include="Areas\Scheduler\Views\ResourceReserve\_SearchResult.cshtml" />
     <Content Include="Areas\Scheduler\Views\Shared\_ResourceReserveEditor.cshtml" />
     <Content Include="Areas\Scheduler\Views\_ViewStart.cshtml" />
+    <None Include="Properties\PublishProfiles\MVCScheduler - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\MVCScheduler - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.7.2.intellisense.js">
       <DependentUpon>jquery-1.7.2.js</DependentUpon>
     </None>
